@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RELISH AR Menu — Case Study | Animeghaa Production House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #F5EFE3;
+  --ink: #211C15;
+  --relish: #C24A30;
+  --mustard: #C99A2E;
+  --text-body: #6B6155;
+  --text-muted: #9A8D77;
+  --border: #E5DCCB;
+  --font-display: 'Instrument Serif', serif;
+  --font-body: 'Hanken Grotesk', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: #0A0908;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Hero ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(194, 74, 48, 0.12), transparent),
+              radial-gradient(ellipse 60% 50% at 30% 70%, rgba(201, 154, 46, 0.08), transparent),
+              #0A0908;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--relish);
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 24px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--relish);
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(245, 239, 227, 0.55);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.hero-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(245, 239, 227, 0.15);
+  color: rgba(245, 239, 227, 0.6);
+}
+
+.btn-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--cream);
+  border: none;
+  border-radius: 100px;
+  padding: 16px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-live:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(194, 74, 48, 0.25);
+}
+
+.btn-live .arrow { font-size: 18px; }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 227, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+/* ---- Section shell ---- */
+section {
+  padding: 100px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mustard);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+.section-body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(245, 239, 227, 0.55);
+  max-width: 640px;
+}
+
+/* ---- Overview ---- */
+.overview {
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 48px;
+}
+
+@media (max-width: 700px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.overview-item h3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 227, 0.35);
+  margin-bottom: 10px;
+}
+
+.overview-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245, 239, 227, 0.7);
+}
+
+/* ---- Features ---- */
+.features {
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-card {
+  background: rgba(245, 239, 227, 0.04);
+  border: 1px solid rgba(245, 239, 227, 0.08);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(194, 74, 48, 0.3);
+  background: rgba(245, 239, 227, 0.06);
+}
+
+.feature-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(245, 239, 227, 0.5);
+}
+
+/* ---- Tech stack ---- */
+.stack {
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.stack-pill {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 100px;
+  background: rgba(245, 239, 227, 0.06);
+  border: 1px solid rgba(245, 239, 227, 0.1);
+  color: rgba(245, 239, 227, 0.7);
+}
+
+/* ---- Menu showcase ---- */
+.menu-showcase {
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.dish-card {
+  background: rgba(245, 239, 227, 0.04);
+  border: 1px solid rgba(245, 239, 227, 0.08);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.dish-card .dish-emoji {
+  font-size: 40px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.dish-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.dish-card span {
+  font-size: 13px;
+  color: rgba(245, 239, 227, 0.4);
+}
+
+.dish-card .dish-price {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--mustard);
+}
+
+/* ---- Stats ---- */
+.stats {
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 32px 16px;
+  border-radius: 20px;
+  background: rgba(245, 239, 227, 0.04);
+  border: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--relish);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(245, 239, 227, 0.45);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---- CTA ---- */
+.cta-section {
+  text-align: center;
+  padding: 120px 24px;
+  border-top: 1px solid rgba(245, 239, 227, 0.08);
+}
+
+.cta-section .section-title {
+  margin-bottom: 32px;
+}
+
+/* ---- Footer ---- */
+.portfolio-footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(245, 239, 227, 0.06);
+}
+
+.portfolio-footer img {
+  height: 36px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+.portfolio-footer p {
+  font-size: 12px;
+  color: rgba(245, 239, 227, 0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <div class="hero-eyebrow">Case Study</div>
+  <h1>RELISH<br><em>AR Menu</em></h1>
+  <p class="hero-sub">A mobile-first restaurant menu where every dish is a 3D model you can spin, inspect, and place on your table in augmented reality &mdash; then order it.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">3D &amp; AR</span>
+    <span class="hero-tag">Mobile Web App</span>
+    <span class="hero-tag">Interactive Prototype</span>
+    <span class="hero-tag">Restaurant Tech</span>
+  </div>
+  <a href="https://themeghapanchal.github.io/menu-prototype-for-portfolio/" class="btn-live" target="_blank" rel="noopener">
+    Try the live demo <span class="arrow">&rarr;</span>
+  </a>
+  <div class="scroll-hint">&darr; Scroll to explore</div>
+</div>
+
+<!-- ====== OVERVIEW ====== -->
+<section class="overview">
+  <div class="section-label">Overview</div>
+  <h2 class="section-title">Reimagining how diners discover food</h2>
+  <p class="section-body">Traditional menus rely on flat photos that rarely match reality. RELISH replaces them with interactive 3D models diners can rotate, zoom, and drop onto their table using AR &mdash; bridging the gap between expectation and plate.</p>
+
+  <div class="overview-grid">
+    <div class="overview-item">
+      <h3>The Problem</h3>
+      <p>Diners order blind. Static photos don't convey portion size, texture, or how a dish actually looks. This leads to mismatched expectations, wasted food, and lower satisfaction.</p>
+    </div>
+    <div class="overview-item">
+      <h3>The Solution</h3>
+      <p>A web-based AR menu that lets customers interact with photorealistic 3D models of every dish before ordering &mdash; no app download required. Point your phone, place the dish on your table, and see exactly what you're getting.</p>
+    </div>
+    <div class="overview-item">
+      <h3>My Role</h3>
+      <p>End-to-end product design and development &mdash; from concept and 3D asset curation to UI design, WebGL rendering, AR integration, and deployment.</p>
+    </div>
+    <div class="overview-item">
+      <h3>Timeline</h3>
+      <p>Designed and built as a working prototype, ready for restaurant pilot testing. Fully functional on both Android and iOS devices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FEATURES ====== -->
+<section class="features">
+  <div class="section-label">Key Features</div>
+  <h2 class="section-title">More than a menu</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="feature-icon">&#x1F504;</span>
+      <h3>360&deg; 3D Viewer</h3>
+      <p>Every dish renders as a real-time 3D model. Drag to rotate, inspect from any angle &mdash; see the textures, layers, and details before you order.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">&#x1F4F1;</span>
+      <h3>Native AR</h3>
+      <p>Tap "View in your space" to place a life-sized dish on your actual table using your phone's camera. Works on Android (Scene Viewer) and iOS (Quick Look).</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">&#x1F6D2;</span>
+      <h3>Full Ordering Flow</h3>
+      <p>Browse by category, add items with pairings, manage quantities, and review your cart &mdash; a complete end-to-end ordering experience.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">&#x1F3A8;</span>
+      <h3>Crafted UI</h3>
+      <p>Warm, tactile design system with Instrument Serif display type, smooth transitions, and a cream-and-ink palette that feels premium yet approachable.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">&#x26A1;</span>
+      <h3>No App Required</h3>
+      <p>Pure web technology &mdash; runs in any mobile browser. Restaurants can deploy it with a QR code on the table. Zero friction for diners.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">&#x1F50D;</span>
+      <h3>Dish Details</h3>
+      <p>Calories, prep time, spice level, full ingredients list, allergen warnings, and real reviews &mdash; everything a diner needs at a glance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MENU SHOWCASE ====== -->
+<section class="menu-showcase">
+  <div class="section-label">The Menu</div>
+  <h2 class="section-title">5 dishes, each with a unique 3D model</h2>
+
+  <div class="dish-grid">
+    <div class="dish-card">
+      <span class="dish-emoji">&#x1F354;</span>
+      <h4>The Classic Smash</h4>
+      <span>Signature burger</span>
+      <span class="dish-price">$14</span>
+    </div>
+    <div class="dish-card">
+      <span class="dish-emoji">&#x1F354;</span>
+      <h4>Double Pattied Cheeseburger</h4>
+      <span>Double stacked</span>
+      <span class="dish-price">$15</span>
+    </div>
+    <div class="dish-card">
+      <span class="dish-emoji">&#x1F357;</span>
+      <h4>Chicken Parma Puff</h4>
+      <span>House favourite</span>
+      <span class="dish-price">$16</span>
+    </div>
+    <div class="dish-card">
+      <span class="dish-emoji">&#x1F956;</span>
+      <h4>Garlic Bread</h4>
+      <span>Sides &middot; to share</span>
+      <span class="dish-price">$7</span>
+    </div>
+    <div class="dish-card">
+      <span class="dish-emoji">&#x1F34C;</span>
+      <h4>Banana</h4>
+      <span>Kids menu</span>
+      <span class="dish-price">$3</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STATS ====== -->
+<section class="stats">
+  <div class="section-label">By The Numbers</div>
+  <h2 class="section-title">Built to perform</h2>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">5</div>
+      <div class="stat-label">3D Models</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">0</div>
+      <div class="stat-label">App Downloads Needed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">360&deg;</div>
+      <div class="stat-label">Interactive Views</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TECH ====== -->
+<section class="stack">
+  <div class="section-label">Tech Stack</div>
+  <h2 class="section-title">Under the hood</h2>
+  <p class="section-body">Built with vanilla web technologies for maximum compatibility and zero dependencies. Every 3D model loads and renders in real-time on the device.</p>
+
+  <div class="stack-list">
+    <span class="stack-pill">Three.js (WebGL)</span>
+    <span class="stack-pill">GLTFLoader</span>
+    <span class="stack-pill">Google Model Viewer</span>
+    <span class="stack-pill">WebXR / Scene Viewer</span>
+    <span class="stack-pill">AR Quick Look (iOS)</span>
+    <span class="stack-pill">Vanilla JS</span>
+    <span class="stack-pill">CSS3</span>
+    <span class="stack-pill">GitHub Pages</span>
+    <span class="stack-pill">PBR Materials</span>
+    <span class="stack-pill">GLB 3D Assets</span>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<div class="cta-section">
+  <div class="section-label">See It Live</div>
+  <h2 class="section-title">Experience it yourself</h2>
+  <p class="section-body" style="margin: 0 auto 40px;">Open on your phone, pick a dish, spin the model, drop it on your table.</p>
+  <a href="https://themeghapanchal.github.io/menu-prototype-for-portfolio/" class="btn-live" target="_blank" rel="noopener">
+    Launch RELISH AR Menu <span class="arrow">&rarr;</span>
+  </a>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer class="portfolio-footer">
+  <img src="logo.png" alt="Animeghaa Production House">
+  <p>&copy; 2025 Animeghaa Production House. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
